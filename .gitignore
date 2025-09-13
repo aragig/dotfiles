@@ -1,0 +1,7 @@
+# 履歴やキャッシュ
+.zsh_history
+# ローカル上書き系（念のため）
+.zshrc.local
+*.local
+*.secrets
+.env
