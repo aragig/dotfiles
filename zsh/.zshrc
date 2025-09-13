@@ -1,7 +1,7 @@
 PROMPT='%K{blue}%F{black}%~%F{black} %k%F{blue}%f$ '
 #PROMPT='%~$ '
 
-export PATH="$PATH:/Users/mopipico/Projects/ssgen"
+#export PATH="$PATH:/Users/mopipico/Projects/ssgen"
 export PATH="$PATH:/Users/mopipico/.composer/vendor/bin"
 export PATH=$PATH:~/Library/Android/sdk/ndk/27.1.12297006/
 export PATH="/opt/homebrew/opt/util-linux/bin:$PATH" # バンドルのcal不具合のため GNU cal を使う
@@ -12,8 +12,8 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH" # GNU版のgrepをインストール（brew install grep）して切り替えた 2025/06/24
 
-alias c="pbcopy"
-alias p="pbpaste"
+# alias c="pbcopy"
+# alias p="pbpaste"
 alias l='ls -F'
 alias ll='ls -alhSFG'
 alias rm='echo "This is not the command you are looking for."; false'
@@ -29,7 +29,7 @@ alias heic='for file in *.[hH][eE][iI][cC]; do magick "$file" -quality 80 -defin
 alias webp='for file in *.webp; do sips -s format jpeg "$file" --out "${file%.webp}.jpg"; done'
 alias venv='source .venv/bin/activate'
 alias iphone='xcrun simctl boot "iPhone SE (3rd generation)" && open -a Simulator'
-
+alias ssg='(cd ~/Projects/ssg-neo && ./gradlew bootRun --args="generateHtml" -Dspring.devtools.restart.enabled=false)'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(rbenv init -)"
