@@ -30,6 +30,32 @@ alias webp='for file in *.webp; do sips -s format jpeg "$file" --out "${file%.we
 alias venv='source .venv/bin/activate'
 alias iphone='xcrun simctl boot "iPhone SE (3rd generation)" && open -a Simulator'
 alias ssg='(cd ~/Projects/ssg-neo && ./gradlew bootRun --args="generateHtml" -Dspring.devtools.restart.enabled=false)'
+# PDF圧縮
+alias pdfmin='f(){ input="$1"; output="${input%.*}_min.pdf"; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$output" "$input" && echo "$output"; }; f'
+# 地震情報（直近1週間分）
+quake() {
+  curl -s "https://www.jma.go.jp/bosai/quake/data/list.json" \
+  | jq -r '
+    ["日時","震源地","M","最大震度"],
+    (
+      .[]
+      | select((.anm // "") != "")
+      | (.at | sub("\\+09:00$"; "") | strptime("%Y-%m-%dT%H:%M:%S")) as $ts
+      | select(($ts | mktime) >= (now - 7*24*60*60))
+      | [
+          ($ts | strftime("%Y-%m-%d %H:%M")),
+          .anm,
+          (.mag // "-"),
+          (.maxi // "-")
+        ]
+    )
+    | @tsv
+  ' \
+  | column -t -s $'\t'
+}
+
+
+
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(rbenv init -)"
