@@ -54,7 +54,12 @@ quake() {
   | column -t -s $'\t'
 }
 
+# パスワードジェネレータ（API用）
+alias genhex="openssl rand -hex 32"
+# パスワードジェネレータ（普段使い用）
+alias genpass="LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32; echo"
 
+alias code='subl'
 
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
