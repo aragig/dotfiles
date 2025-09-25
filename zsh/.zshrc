@@ -1,4 +1,8 @@
-PROMPT='%K{blue}%F{black}%~%F{black} %k%F{blue}%f$ '
+# For dark style
+#PROMPT='%K{blue}%F{black}%~%F{black} %k%F{blue}%f$ '
+# For light style
+PROMPT='%F{blue}%~%f$ '
+# Just simple
 #PROMPT='%~$ '
 
 #export PATH="$PATH:/Users/mopipico/Projects/ssgen"
@@ -11,6 +15,9 @@ export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH" # GNU版のgrepをインストール（brew install grep）して切り替えた 2025/06/24
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
 # alias c="pbcopy"
 # alias p="pbpaste"
