@@ -1,0 +1,30 @@
+{
+  "title": "Terminal等で入力ソースが日本語以外の場合に英数をEscapeに変更する",
+  "rules": [
+    {
+      "description": "Terminal等で入力ソースが日本語以外の場合に英数をEscapeに変更する",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "japanese_eisuu", "modifiers": { "optional": [ "any" ] } },
+          "to": [ { "key_code": "escape"} ],
+          "conditions": [
+            {
+              "type": "input_source_unless",
+              "input_sources": [ { "language": "^ja$" } ]
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^org\\.vim\\.",
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
