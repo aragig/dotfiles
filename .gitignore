@@ -5,3 +5,6 @@
 *.local
 *.secrets
 .env
+
+# Vim標準のファイルブラウザがつくる「ディレクトリ履歴ファイル」
+.netrwhist
