@@ -13,6 +13,9 @@ Vim チートシート
 
 :MRU     最近開いたファイル (Most Recently Used files) - プラグイン
 
+gcc<CR>      選択行をコメントアウト
+gc2<CR>     カーソルから2行分をコメントアウト
+
 u      Undo
 Ctrl-r Redo
 :pwd   カレントディレクトリを調べる

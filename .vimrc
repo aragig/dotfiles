@@ -47,3 +47,7 @@ augroup END
 nnoremap <Leader>ev :e ~/dotfiles/.vimrc<CR>
 nnoremap <Leader>cv :e ~/dotfiles/cheatsheets/vim.txt<CR>
 
+" ========= vim-commentary コメントアウト設定 =========
+filetype plugin indent on
+autocmd FileType vim setlocal commentstring=\"\ %s
+
