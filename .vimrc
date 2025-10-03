@@ -5,6 +5,9 @@ set fileencodings=utf-8,cp932,sjis,utf-16le,euc-jp,latin1
                                 " 既存ファイルを開く際の自動判定の優先順
 set fileformats=unix,dos        " 改行コードの判定順（LF優先, CRLFも許可）
 
+execute pathogen#infect()
+execute pathogen#helptags()
+
 " ========== 表示/操作まわり ==========
 syntax enable                   " 構文ハイライトを有効化
 "colorscheme iceberg            " 任意の配色（未使用）

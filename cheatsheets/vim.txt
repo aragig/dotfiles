@@ -11,6 +11,8 @@ Vim チートシート
 :ls     バッファー一覧
 :buffer 2     指定番号のバッファーへ移動
 
+:MRU     最近開いたファイル (Most Recently Used files) - プラグイン
+
 u      Undo
 Ctrl-r Redo
 :pwd   カレントディレクトリを調べる
