@@ -41,3 +41,6 @@ augroup vimrc
   " vimスクリプト内でKキー（キーワードヘルプ）を:helpに割り当て
 augroup END
 
+nnoremap <Leader>ev :e ~/dotfiles/.vimrc<CR>
+nnoremap <Leader>cv :e ~/dotfiles/cheatsheets/vim.txt<CR>
+
