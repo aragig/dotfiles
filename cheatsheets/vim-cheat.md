@@ -4,13 +4,13 @@ Vim チートシート
 覚えるコツ: 楽器と同じでゆっくりコマンドを打つ
 覚えた操作はチェック！
 
-[ ] "+y<CR>  選択したテキストをクリップボードへコピー
-[ ] \ev    ~/dotfiles/.vimrc を開く
-[ ] \cv    ~/dotfiles/cheatsheets/vim.txt
-[ ] :e filename  ファイルを編集
-[ ] <C-^>        直前に開いていたファイルに戻る
-[ ] :ls     バッファー一覧
-[ ] :buffer 2     指定番号のバッファーへ移動
+- [ ] "+y<CR>  選択したテキストをクリップボードへコピー
+- [x] \ev    ~/dotfiles/.vimrc を開く
+- [ ] \cv    ~/dotfiles/cheatsheets/vim.txt
+- [ ] :e filename  ファイルを編集
+- [ ] <C-^>        直前に開いていたファイルに戻る
+- [ ] :ls     バッファー一覧
+- [ ] :buffer 2     指定番号のバッファーへ移動
 
 [ ] :MRU     最近開いたファイル (Most Recently Used files) - プラグイン
 
