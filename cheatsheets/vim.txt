@@ -32,7 +32,7 @@ git commit -m "Add Tabular plugin as submodule"
 [ ] gcc<CR>      選択行をコメントアウト
 [ ] gc2<CR>     カーソルから2行分をコメントアウト
 
-[ ] :'<,'>Tabularize /\v {2,}/       ビジュアル選択内2スペース以上を基準に整列
+[ ] :'<,'>Tabularize /\v {2,}/<CR>       ビジュアル選択内2スペース以上を基準に整列
 [ ] \b<CR>                           チェックボックスを追加
 
 [x] u             Undo
@@ -53,6 +53,7 @@ git commit -m "Add Tabular plugin as submodule"
 [ ] $         行末へ
 [ ] gg        ファイル先頭へ
 [ ] G         ファイル末尾へ
+[ ] 45G       45行目へ移動
 
 [編集系]
 [ ] i         挿入モード

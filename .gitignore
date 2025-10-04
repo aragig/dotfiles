@@ -1,2 +1,8 @@
 .netrwhist
 
+# secrets
+zsh/conf.d/90-secrets.zsh
+zsh/.zshrc.local
+zsh/private/
+zsh/.zcompdump
+
