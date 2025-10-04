@@ -14,7 +14,9 @@ syntax enable                   " 構文ハイライトを有効化
 "colorscheme slate               " 標準の“slate”配色を使用
 set t_Co=256
 set background=light
-colorscheme lucius
+" colorscheme lucius
+colorscheme PaperColor
+
 set laststatus=2                " 常にステータスラインを表示
 set ruler                       " 画面右下にカーソル位置を表示
 set showmode                    " 現在のモードを表示

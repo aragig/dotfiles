@@ -4,6 +4,10 @@ Vim チートシート
 覚えるコツ: 楽器と同じでゆっくりコマンドを打つ
 覚えた操作はチェック！
 
+
+[ ] *     カーソル上の単語を前方検索（後方は#）
+[ ] :noh or :nohlsearch 検索ハイライトを解除
+
 [ ] "+y<CR>  選択したテキストをクリップボードへコピー
 [ ] \ev    ~/dotfiles/.vimrc を開く
 [ ] \cv    ~/dotfiles/cheatsheets/vim.txt
@@ -13,6 +17,7 @@ Vim チートシート
 [ ] :buffer 2     指定番号のバッファーへ移動
 
 [ ] :MRU     最近開いたファイル (Most Recently Used files) - プラグイン
+[ ] :MRU     ファイル選択後<CR> o t でそれぞれ挙動が異なる
 
 [ ] gcc<CR>      選択行をコメントアウト
 [ ] gc2<CR>     カーソルから2行分をコメントアウト
