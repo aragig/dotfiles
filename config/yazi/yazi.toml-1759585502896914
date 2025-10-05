@@ -1,0 +1,29 @@
+[manager]
+show_hidden = true           # ドットファイルを表示
+sort_by = "mtime"            # 更新日時でソート
+sort_reverse = true          # 新しい順に表示
+scroll_offset = 3            # スクロール余白
+case_sensitive = false       # 大文字小文字を区別しない
+linemode = "size"            # ファイルサイズを右側に表示
+show_symlink = true          # シンボリックリンクを表示
+show_git = true              # Gitステータス表示（Rust拡張が必要）
+xdg_open = true              # macOSの「open」コマンドで開ける
+
+[preview]
+wrap = true                  # 長い行を折り返す
+max_width = 120
+max_height = 60
+image_quality = 80
+tab_size = 4
+disable = ["application/pdf"]  # PDFプレビューを無効化（バグ対策）
+
+[opener]
+# macOSで "Enter" したときにFinder的に開く
+open = [
+  { run = 'open "$@"', desc = "Open with macOS default app" },
+]
+
+[plugin]
+# PDFプレビューの代替（必要なら再度有効化可）
+# enable = ["pdf_preview"]
+

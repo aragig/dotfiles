@@ -1,0 +1,74 @@
+[mgr]
+show_hidden = true           # ドットファイルを表示
+sort_by = "mtime"            # 更新日時でソート
+sort_reverse = true          # 新しい順に表示
+scroll_offset = 3            # スクロール余白
+case_sensitive = false       # 大文字小文字を区別しない
+linemode = "size"            # ファイルサイズを右側に表示
+show_symlink = true          # シンボリックリンクを表示
+show_git = true              # Gitステータス表示（Rust拡張が必要）
+xdg_open = true              # macOSの「open」コマンドで開ける
+
+[preview]
+wrap = "yes"                 # 長い行を折り返す
+max_width = 120
+max_height = 60
+image_quality = 80
+tab_size = 4
+
+# ここがポイント：バイナリ系はプレビュー無効化
+disable = [
+  "application/pdf",
+  "image/*",
+  "video/*",
+  "audio/*",
+  "application/octet-stream"  # 拡張子不明のバイナリ保険
+]
+
+[opener]
+macvim = [
+  # GUIで開く & yaziから切り離す
+  { run = 'open -a "MacVim" "$1"', desc = "Open in MacVim", orphan = true, for = "macos" }
+]
+open = [
+  # macOSのデフォルトアプリで開く（画像/動画/PDFなど）
+  { run = 'open "$1"', desc = "Open with macOS default app", orphan = true, for = "macos" }
+]
+edit = [
+  # 端末Vimで開きたいとき用（任意）
+  { run = 'vim "$1"', desc = "Edit in terminal Vim", block = true, for = "unix" }
+]
+
+[open]
+rules = [
+  { mime = "text/*", use = "macvim" },
+	  # 画像は macOS のデフォルトアプリ（プレビュー.app など）
+  { mime = "image/*", use = "open" },
+
+  # ついでにメディア系も外部アプリへ（任意）
+  { mime = "video/*", use = "open" },
+  { mime = "audio/*", use = "open" },
+  { mime = "application/pdf", use = "open" },
+
+  # なんでも最後はデフォルトへ
+  { name = "*", use = "open" }
+]
+
+# --- PDFプレビューを完全に無効化 ---
+[plugin]
+# 既定よりも前に差し込む（＝優先して適用）
+prepend_previewers = [
+  { mime = "application/pdf", run = "noop" },
+  { mime = "image/*", run = "noop" },
+  { mime = "video/*", run = "noop" },
+  { mime = "audio/*", run = "noop" },
+  { mime = "application/octet-stream", run = "noop" }	
+]
+prepend_preloaders = [
+  { mime = "application/pdf", run = "noop" },
+  { mime = "image/*", run = "noop" },
+  { mime = "video/*", run = "noop" },
+  { mime = "audio/*", run = "noop" },
+  { mime = "application/octet-stream", run = "noop" }	
+]
+

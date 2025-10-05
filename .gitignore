@@ -6,3 +6,8 @@ zsh/.zshrc.local
 zsh/private/
 zsh/.zcompdump
 
+
+config/iterm2
+config/chezmoi
+config/github-copilot
+
