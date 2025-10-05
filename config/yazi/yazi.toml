@@ -58,6 +58,16 @@ rules = [
 [plugin]
 # 既定よりも前に差し込む（＝優先して適用）
 prepend_previewers = [
+  # --- ここからシェルスクリプトの明示プレビュー ---
+  { name = "*.sh",   run = "code" },
+  { name = "*.bash", run = "code" },
+  { name = "*.zsh",  run = "code" },
+
+  # shebang付きや拡張子なしでも MIME で拾う
+  { mime = "text/x-shellscript", run = "code" },
+  { mime = "application/x-sh",   run = "code" },
+  { mime = "text/x-sh",          run = "code" },
+
   { mime = "application/pdf", run = "noop" },
   { mime = "image/*", run = "noop" },
   { mime = "video/*", run = "noop" },
