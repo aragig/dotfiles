@@ -1,7 +1,9 @@
 [mgr]
 show_hidden = true           # ドットファイルを表示
-sort_by = "mtime"            # 更新日時でソート
-sort_reverse = true          # 新しい順に表示
+# sort_by = "mtime"            # 更新日時でソート
+# sort_reverse = true          # 新しい順に表示
+sort_by = "natural"       # 名前順でソート
+sort_reverse = false   # 昇順（A→Z）
 scroll_offset = 3            # スクロール余白
 case_sensitive = false       # 大文字小文字を区別しない
 linemode = "size"            # ファイルサイズを右側に表示
@@ -41,11 +43,15 @@ edit = [
 
 [open]
 rules = [
-  { mime = "text/*", use = "macvim" },
-	  # 画像は macOS のデフォルトアプリ（プレビュー.app など）
-  { mime = "image/*", use = "open" },
+  # まず空ファイルを拾う（*.toml を明示 & x-empty もカバー）
+  { name = "*.toml", use = "macvim" },
+  { mime = "application/x-empty", use = "macvim" },
 
-  # ついでにメディア系も外部アプリへ（任意）
+  # 通常のテキスト
+  { mime = "text/*", use = "macvim" },
+
+  # 画像/メディア/PDF は macOS のデフォルトアプリ
+  { mime = "image/*", use = "open" },
   { mime = "video/*", use = "open" },
   { mime = "audio/*", use = "open" },
   { mime = "application/pdf", use = "open" },

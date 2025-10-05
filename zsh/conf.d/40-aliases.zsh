@@ -1,5 +1,6 @@
 echo "load ${(%):-%N}"
 
+alias f='yazi'
 alias pbc="pbcopy"
 alias pbp="pbpaste"
 alias te='open -a TextEdit'

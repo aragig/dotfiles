@@ -3,3 +3,9 @@ echo "load ${(%):-%N}"
 autoload -U colors; colors
 setopt promptsubst
 
+reload() {
+  echo "Reloading Zsh..."
+  exec zsh
+}
+alias src='reload'
+

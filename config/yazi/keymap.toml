@@ -3,3 +3,8 @@
 open = ["enter"]      # Enterで「open」アクションを実行
 quit = ["q"]          # qで終了
 
+[[mgr.prepend_keymap]]
+on   = "O"                             # Shift+o
+run  = 'shell -- open "$0"'
+desc = "Open hovered in Finder"
+
