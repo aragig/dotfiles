@@ -1,4 +1,8 @@
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf keybindings & completion
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if type fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
+fi
 
 # fzf: ファイル検索のデフォルトコマンドを fd に置き換え
 # fd は .gitignore を自動で尊重し、隠しファイルも扱える
