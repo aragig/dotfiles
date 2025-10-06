@@ -1,4 +1,5 @@
 .netrwhist
+.zsh_sessions
 
 # secrets
 zsh/conf.d/90-secrets.zsh
