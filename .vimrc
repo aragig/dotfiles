@@ -4,6 +4,7 @@ scriptencoding utf-8            " このvimrcファイル自体の文字コー�
 set fileencodings=utf-8,cp932,sjis,utf-16le,euc-jp,latin1
                                 " 既存ファイルを開く際の自動判定の優先順
 set fileformats=unix,dos        " 改行コードの判定順（LF優先, CRLFも許可）
+set ambiwidth=double            " ①のような文字が全角で表示されるように
 
 execute pathogen#infect()
 execute pathogen#helptags()
