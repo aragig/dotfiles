@@ -32,6 +32,9 @@ macvim = [
   # GUIで開く & yaziから切り離す
   { run = 'open -a "MacVim" "$1"', desc = "Open in MacVim", orphan = true, for = "macos" }
 ]
+vim = [
+  { run = 'vim "$1"', desc = "Edit in terminal Vim", block = true, for = "unix" }
+]
 open = [
   # macOSのデフォルトアプリで開く（画像/動画/PDFなど）
   { run = 'open "$1"', desc = "Open with macOS default app", orphan = true, for = "macos" }
@@ -43,12 +46,10 @@ edit = [
 
 [open]
 rules = [
-  # まず空ファイルを拾う（*.toml を明示 & x-empty もカバー）
-  { name = "*.toml", use = "macvim" },
-  { mime = "application/x-empty", use = "macvim" },
-
-  # 通常のテキスト
-  { mime = "text/*", use = "macvim" },
+  { name = "*.txt", use = "vim" },
+  { name = "*.toml", use = "vim" },
+  { mime = "application/x-empty", use = "vim" },
+  { mime = "text/*", use = "vim" },
 
   # 画像/メディア/PDF は macOS のデフォルトアプリ
   { mime = "image/*", use = "open" },
