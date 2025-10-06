@@ -14,10 +14,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.microsoft\\.VSCode$",
-                                            "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\..+$",
-                                            "^com\\.google\\.android\\.studio$"
+                                            "^com\\.microsoft\\.VSCode$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
