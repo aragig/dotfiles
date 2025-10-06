@@ -1,0 +1,2 @@
+公式？ドキュメント
+https://yazi-rs.github.io/docs/quick-start
