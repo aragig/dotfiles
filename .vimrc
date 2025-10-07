@@ -18,6 +18,7 @@ set background=light
 " colorscheme lucius
 colorscheme PaperColor
 
+set colorcolumn=100              " 折り返し目安の縦線（ルーラー）
 set laststatus=2                " 常にステータスラインを表示
 set ruler                       " 画面右下にカーソル位置を表示
 set showmode                    " 現在のモードを表示
@@ -57,4 +58,7 @@ nnoremap <Leader>b :normal! I[ ] <CR>
 " ========= vim-commentary コメントアウト設定 =========
 filetype plugin indent on
 autocmd FileType vim setlocal commentstring=\"\ %s
+
+" Yazi風に qq で終了
+nnoremap <silent> qq :q<CR>
 
