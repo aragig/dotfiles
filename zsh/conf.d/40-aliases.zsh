@@ -1,6 +1,14 @@
 echo "load ${(%):-%N}"
 
-alias f='yazi'
+# alias f='yazi'
+y() {
+  local tmp="$(mktemp)"
+  yazi --cwd-file="$tmp" "$@"
+  if [[ -f "$tmp" && -s "$tmp" ]]; then
+    cd -- "$(cat "$tmp")" || return
+  fi
+  rm -f "$tmp"
+}
 alias pbc="pbcopy"
 alias pbp="pbpaste"
 alias te='open -a TextEdit'
