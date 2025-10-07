@@ -1,10 +1,31 @@
-# ~/.config/yazi/keymap.toml
-[keymap]
-open = ["enter"]      # Enterで「open」アクションを実行
-quit = ["q"]          # qで終了
-
+# ==== disable single 'q' ====
 [[mgr.prepend_keymap]]
-on   = "O"                             # Shift+o
+on  = ["q"]          # 単発 q
+run = "noop"         # 既定の quit を無効化
+desc = "Disable single q quit"
+
+# ==== quit with confirmation on 'q','q' ====
+[[mgr.prepend_keymap]]
+on  = ["q","q"]      # 連続 qq
+run = "quit"
+desc = "Quit Yazi (qq)"
+
+# Enterでファイルを開く（MacVimなど）
+[[keymap.normal]]
+on = ["enter"]
+run = "open"
+desc = "Open selected"
+
+# Shift+OでFinderを開く
+[[mgr.prepend_keymap]]
+on   = "O"
 run  = 'shell -- open "$0"'
 desc = "Open hovered in Finder"
+
+
+# デフォルトより先にマッピングを差し込む
+[[mgr.prepend_keymap]]
+on  = ["\\", "c"]
+run = 'shell -- cat "$0" | pbcopy'
+desc = "Copy hovered file content to clipboard"
 
