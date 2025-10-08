@@ -1,4 +1,5 @@
 echo "load ${(%):-%N}"
+path=(/opt/homebrew/bin /opt/homebrew/sbin $path)
 # PATH 追記類（Homebrew の後に）
 export PATH="$PATH:/Users/mopipico/.composer/vendor/bin"
 export PATH=$PATH:~/Library/Android/sdk/ndk/27.1.12297006/

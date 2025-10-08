@@ -9,6 +9,7 @@ y() {
   fi
   rm -f "$tmp"
 }
+
 alias pbc="pbcopy"
 alias pbp="pbpaste"
 alias te='open -a TextEdit'

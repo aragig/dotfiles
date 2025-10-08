@@ -15,17 +15,15 @@ xdg_open = true              # macOSの「open」コマンドで開ける
 ratio = [1, 2, 8] # 「左・中央・右」ペインの比率
 
 [preview]
-wrap = "yes"                 # 長い行を折り返す
-max_width = 120
-max_height = 60
-image_quality = 80
-tab_size = 4
+# wrap = "yes"                 # 長い行を折り返す
+# max_width = 999
+# max_height = 300
+image_quality = 85
+tab_size = 2
+image_downscale = true
 
 # ここがポイント：バイナリ系はプレビュー無効化
 disable = [
-  "application/pdf",
-  "image/*",
-  "video/*",
   "audio/*",
   "application/octet-stream"  # 拡張子不明のバイナリ保険
 ]
@@ -75,23 +73,28 @@ prepend_previewers = [
   { name = "*.sh",   run = "code" },
   { name = "*.bash", run = "code" },
   { name = "*.zsh",  run = "code" },
-
-  # shebang付きや拡張子なしでも MIME で拾う
   { mime = "text/x-shellscript", run = "code" },
   { mime = "application/x-sh",   run = "code" },
   { mime = "text/x-sh",          run = "code" },
 
-  { mime = "application/pdf", run = "noop" },
-  { mime = "image/*", run = "noop" },
-  { mime = "video/*", run = "noop" },
-  { mime = "audio/*", run = "noop" },
-  { mime = "application/octet-stream", run = "noop" }	
+  # { mime = "application/pdf", run = "noop" },
+  # { mime = "image/*", run = "noop" },
+  # { mime = "video/*", run = "noop" },
+  # { mime = "audio/*", run = "noop" },
+  # { mime = "application/octet-stream", run = "noop" }	
 ]
 prepend_preloaders = [
-  { mime = "application/pdf", run = "noop" },
-  { mime = "image/*", run = "noop" },
-  { mime = "video/*", run = "noop" },
-  { mime = "audio/*", run = "noop" },
-  { mime = "application/octet-stream", run = "noop" }	
+  # { mime = "application/pdf", run = "noop" },
+  # { mime = "image/*", run = "noop" },
+  # { mime = "video/*", run = "noop" },
+  # { mime = "audio/*", run = "noop" },
+  # { mime = "application/octet-stream", run = "noop" }	
 ]
+
+[tasks]
+# 例: 幅/高さ 10000px まで許可
+image_bound = [10000, 10000]
+
+# 例: 1枚あたり 768 MiB までメモリ許可（必要なら増減）
+image_alloc = 805306368
 
