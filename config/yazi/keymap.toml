@@ -27,5 +27,5 @@ desc = "Open hovered in Finder"
 [[mgr.prepend_keymap]]
 on  = ["\\", "y"]
 run = 'shell -- cat "$0" | pbcopy'
-desc = "Copy hovered file content to clipboard"
+desc = "ファイルの内容をクリップボードにコピー"
 
