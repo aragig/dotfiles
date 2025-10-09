@@ -29,6 +29,7 @@ set wildmenu                    " コマンドライン補完をポップアッ�
 set iminsert=0                  " 挿入モード開始時はIMEオフ
 set hlsearch                    " 検索結果をハイライト
 set autoindent                  " 自動インデントを有効化
+set shortmess-=S                " 検索結果の件数表示
 
 " ========== ファイル保存/バックアップ ==========
 set noundofile                  " 永続Undoファイルを作らない
