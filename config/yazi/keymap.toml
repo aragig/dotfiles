@@ -29,3 +29,18 @@ on  = ["\\", "y"]
 run = 'shell -- cat "$0" | pbcopy'
 desc = "ファイルの内容をクリップボードにコピー"
 
+[[mgr.prepend_keymap]]
+on  = ["g", "f"]
+run = 'cd ~/dotfiles'
+desc = "Go ~/dotfiles"
+
+[[mgr.prepend_keymap]]
+on  = ["g", "m"]
+run = 'cd ~/memo-arai'
+desc = "Go ~/memo-arai"
+
+[[mgr.prepend_keymap]]
+on  = ["g", "u"]
+run = 'cd ~/uc'
+desc = "Go ~/uc"
+
