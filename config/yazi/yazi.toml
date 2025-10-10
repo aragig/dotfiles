@@ -12,7 +12,7 @@ linemode = "size"            # ファイルサイズを右側に表示
 show_symlink = true          # シンボリックリンクを表示
 show_git = true              # Gitステータス表示（Rust拡張が必要）
 xdg_open = true              # macOSの「open」コマンドで開ける
-ratio = [1, 2, 8] # 「左・中央・右」ペインの比率
+ratio = [2, 3, 8] # 「左・中央・右」ペインの比率
 
 [preview]
 # wrap = "yes"                 # 長い行を折り返す
