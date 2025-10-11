@@ -32,7 +32,7 @@ alias venv='source .venv/bin/activate'
 alias iphone='xcrun simctl boot "iPhone SE (3rd generation)" && open -a Simulator'
 
 # ssg-neo 実行
-alias ssg='(cd ~/Projects/ssg-neo && \
+alias ssg='(cd ~/w/ssg-neo && \
 export JAVA_HOME=$(/usr/libexec/java_home -v 17) && \
 ./gradlew -Dorg.gradle.java.home="$JAVA_HOME" bootRun \
 --args="generateHtml" \
