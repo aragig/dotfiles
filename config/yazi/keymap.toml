@@ -44,3 +44,19 @@ on  = ["g", "u"]
 run = 'cd ~/uc'
 desc = "Go ~/uc"
 
+# \v : 行番号なしで色付きビュー
+[[mgr.prepend_keymap]]
+on   = ["\\", "v"]
+run  = '''
+shell --block -- bash -lc "bat --paging=always --style=plain \"$0\""
+'''
+desc = "View (bat, no numbers)"
+
+# \V : 行番号あり
+[[mgr.prepend_keymap]]
+on   = ["\\", "V"]
+run  = '''
+shell --block -- bash -lc "bat --paging=always --style=numbers \"$0\""
+'''
+desc = "View (bat, with numbers)"
+
