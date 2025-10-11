@@ -1,1 +1,1 @@
-set guifont=Iosevka:h13
+set guifont=Iosevka:h12
