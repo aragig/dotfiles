@@ -63,3 +63,6 @@ autocmd FileType vim setlocal commentstring=\"\ %s
 " Yazi風に qq で終了
 nnoremap <silent> qq :q<CR>
 
+" 行番号の表示をトグル
+nnoremap <Leader>n :set number!<CR>
+
