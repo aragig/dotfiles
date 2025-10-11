@@ -51,3 +51,16 @@ alias vim='mvim --remote-tab-silent'
 alias genhex="openssl rand -hex 32"
 alias genpass="LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32; echo"
 
+# 任意の拡張子を一括変換:  ex) changeext txt md
+changeext() {
+  local from="$1" to="$2"
+  if [[ -z "$from" || -z "$to" ]]; then
+    echo "Usage: changeext <from> <to>"
+    return 1
+  fi
+  for f in *."$from"; do
+    [[ -e "$f" ]] || continue
+    mv "$f" "${f%.$from}.$to"
+  done
+}
+
