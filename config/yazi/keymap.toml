@@ -60,3 +60,19 @@ shell --block -- bash -lc "bat --paging=always --style=numbers \"$0\""
 '''
 desc = "View (bat, with numbers)"
 
+# /m : 既存ウィンドウがあればタブに追加
+[[mgr.prepend_keymap]]
+on   = ["\\", "m"]
+run  = '''
+shell -- /Applications/MacVim.app/Contents/bin/mvim --remote-tab-silent "$0" || /Applications/MacVim.app/Contents/bin/mvim "$0"
+'''
+desc = "Open in MacVim (reuse window tab)"
+
+# /M : 常に新しいウィンドウで開く
+[[mgr.prepend_keymap]]
+on   = ["\\", "M"]
+run  = '''
+shell -- /Applications/MacVim.app/Contents/bin/mvim -f "$0"
+'''
+desc = "Open in MacVim (new window)"
+
