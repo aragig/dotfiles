@@ -1,3 +1,4 @@
+echo "load ${(%):-%N}"
 # ===== Cheats unified entrypoints =====
 # 検索対象ディレクトリ（順序で優先度を決める）
 typeset -ag CHEATS_DIRS
@@ -34,7 +35,8 @@ c() {
       --height=80% --border \
       --preview 'if command -v bat >/dev/null 2>&1; then bat --style=plain --paging=never {}; else cat {}; fi' \
       --preview-window=right,60% \
-      --bind 'ctrl-o:execute-silent(open {})'
+      --bind 'ctrl-o:execute-silent(/Applications/MacVim.app/Contents/bin/mvim --remote-tab-silent {})' \
+  		--bind 'ctrl-v:execute(bash -lc '"'"'f="$1"; if command -v bat >/dev/null 2>&1; then bat --color=always --style=plain --paging=never "$f"; else cat "$f"; fi | less -R'"'"' -- {})'
   )
   [[ -n $target ]] || return
   "${EDITOR:-vim}" "$target"
