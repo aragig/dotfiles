@@ -4,11 +4,17 @@ on  = ["q"]          # 単発 q
 run = "noop"         # 既定の quit を無効化
 desc = "Disable single q quit"
 
-# ==== quit with confirmation on 'q','q' ====
+# 連続 qqで「移動しない」終了（cwd-fileを書かない）
 [[mgr.prepend_keymap]]
 on  = ["q","q"]      # 連続 qq
-run = "quit"
+run = "quit --no-cwd-file"
 desc = "Quit Yazi (qq)"
+
+# Q で「移動する」終了
+[[mgr.prepend_keymap]]
+on  = ["Q"]
+run = "quit"
+desc = "Quit without writing cwd-file"
 
 # Enterでファイルを開く（MacVimなど）
 [[keymap.normal]]
@@ -62,17 +68,15 @@ desc = "View (bat, with numbers)"
 
 # /m : 既存ウィンドウがあればタブに追加
 [[mgr.prepend_keymap]]
-on   = ["\\", "m"]
+on   = ["\\", "s"]
 run  = '''
-shell -- /Applications/MacVim.app/Contents/bin/mvim --remote-tab-silent "$0" || /Applications/MacVim.app/Contents/bin/mvim "$0"
+shell -- subl "$0" || open -a "Sublime Text" "$0"
 '''
-desc = "Open in MacVim (reuse window tab)"
+desc = "Open in Sublime (reuse window tab)"
 
-# /M : 常に新しいウィンドウで開く
+# \r で現在のディレクトリを開き直す（再読み込み）
 [[mgr.prepend_keymap]]
-on   = ["\\", "M"]
-run  = '''
-shell -- /Applications/MacVim.app/Contents/bin/mvim -f "$0"
-'''
-desc = "Open in MacVim (new window)"
+on   = ["\\", "r"]
+run  = 'cd "$PWD"'
+desc = "Reload current directory"
 
