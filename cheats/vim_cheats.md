@@ -20,13 +20,22 @@
 ### プラグインのインストール方法・ルール
 Gitのサブモジュールでインストールすること
 例: 
-```
+
+```shell
 cd ~/dotfiles
 git submodule add https://github.com/godlygeek/tabular.git bundle/tabular
 git commit -m "Add Tabular plugin as submodule"
 ```
 
 ### 未分類
+%  カッコなどの上でタイプすると前後に移動できる
+
+.  直前の編集操作を繰り返す
+
+<C-z>  Vimが終了してしまう、不明で危険なコマンド。要調査
+<C-a>  数字をインクリメント
+<C-x>  数字をデクリメント
+~  大文字小文字をトグル
 [ ] *                         カーソル上の単語を前方検索（後方は#）
 [ ] :noh or :nohlsearch       検索ハイライトを解除
 
@@ -41,55 +50,60 @@ git commit -m "Add Tabular plugin as submodule"
 [ ] :MRU       最近開いたファイル (Most Recently Used files) - プラグイン
 [ ] :MRU       ファイル選択後<CR> o t でそれぞれ挙動が異なる
 
-[ ] gcc<CR>      選択行をコメントアウト
-[ ] gc2<CR>     カーソルから2行分をコメントアウト
+gcc<CR>      選択行をコメントアウト
+gc3<CR>     カーソルから2行分をコメントアウト
 
 [ ] :'<,'>Tabularize /\v {2,}/<CR>    ビジュアル選択内2スペース以上を基準に整列
 [ ] \b<CR>                           チェックボックスを追加
 
-[x] u             Undo
-[ ] Ctrl-r        Redo
+ u             Undo
+Ctrl-r        Redo
 [ ] :pwd          カレントディレクトリを調べる
 [ ] :cd           カレントディレクトリを変更
-[x] x             カーソル上の一文字を削除
+x             カーソル上の一文字を削除
 [ ] Ctrl-[        ESCと同じ
 
 ### 移動系
-[ ] h         左に移動
-[ ] j         下に移動
-[ ] k         上に移動
-[ ] l         右に移動
+h         左に移動
+j         下に移動
+k         上に移動
+l         右に移動
 [ ] gj         一行下に移動
 [ ] gk         一行上に移動
 
-[ ] w         次の単語へ移動
-[ ] b         前の単語へ移動
-[ ] 0         行頭へ
-[ ] $         行末へ
-[ ] gg        ファイル先頭へ
-[ ] G         ファイル末尾へ
-[ ] 45G       45行目へ移動
+w         次の単語へ移動
+b         前の単語へ移動
+0         行頭へ
+$         行末へ
+gg        ファイル先頭へ
+G         ファイル末尾へ
+45G       45行目へ移動
++
 
 ### 編集系
-[ ] i         挿入モード
-[ ] a         挿入モード (カーソル右)
-[ ] o         下に新しい行を開いて挿入モード
-[ ] dd        行削除
+i         挿入モード
+I
+a         挿入モード (カーソル右)
+A
+o         下に新しい行を開いて挿入モード
+O         上に新しい行を開いて挿入モード
+dd        行削除
 [ ] yy        行コピー
 [ ] p         貼り付け
+s   削除してから挿入モード？
 
 ### 検索・置換
-[ ] /文字列                前方検索
+/文字列                前方検索
 [ ] ?文字列                後方検索
-[ ] n                      次へ移動
-[ ] N                      前へ移動
+n                      次へ移動
+N                      前へ移動
 [ ] :%s/foo/bar/g          全置換
 
 ### 保存・終了
-[ ] :w        保存
-[ ] :q        終了
-[ ] :wq       保存して終了
-[ ] :q!       保存せず終了
+:w        保存
+:q        終了
+:wq       保存して終了
+:q!       保存せず終了
 
 ### 外部コマンド実行系
 [ ] :!ls     シェルコマンド実行
@@ -98,4 +112,11 @@ git commit -m "Add Tabular plugin as submodule"
 [ ] Ctrl-g    ファイル情報・現在位置を表示
 
 
+:save { ファイルパス } <CR>
+:set ff?<CR>    ff=fileformat unix:LF or dos:CRLF
+:set ff={dos or unix}<CR>  改行コードの変更
+:set fenc?<CR>   現在のコード設定を調べる
+:set fenc=cp932
+
+:h  ヘルプ
 
