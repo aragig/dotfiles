@@ -14,3 +14,8 @@ export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
 # PlatformIO（pipenv相当の仮想環境）
 export PATH="$PATH:/Users/mopipico/.platformio/penv/bin"
+
+
+# JetBrains
+export PATH="$PATH:/Applications/DataGrip.app/Contents/MacOS"
+export PATH="$PATH:/Applications/PyCharm.app/Contents/MacOS"
