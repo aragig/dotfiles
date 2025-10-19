@@ -15,7 +15,7 @@ alias pbp="pbpaste"
 # alias te='open -a TextEdit'
 
 # GNU coreutils / bat
-alias ls='gls --color -h --group-directories-first -F'
+# alias ls='gls --color -h --group-directories-first -F'
 alias cat='bat --paging never --decorations never --plain'
 
 # 誤爆防止（rm を封印）
