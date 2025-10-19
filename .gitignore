@@ -2,11 +2,10 @@
 .zsh_sessions
 
 # secrets
-zsh/conf.d/90-secrets.zsh
 zsh/.zshrc.local
 zsh/private/
 zsh/.zcompdump
-
+zsh/conf.d/90*
 
 config/iterm2
 config/chezmoi
