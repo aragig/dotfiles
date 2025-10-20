@@ -9,3 +9,5 @@ reload() {
 }
 alias src='reload'
 
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"

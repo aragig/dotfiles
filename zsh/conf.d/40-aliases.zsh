@@ -1,6 +1,5 @@
 echo "load ${(%):-%N}"
 
-# alias y='yazi'
 y() {
   local tmp="$(mktemp)"
   yazi --cwd-file="$tmp" "$@"
@@ -16,7 +15,7 @@ alias pbp="pbpaste"
 
 # GNU coreutils / bat
 # alias ls='gls --color -h --group-directories-first -F'
-alias cat='bat --paging never --decorations never --plain'
+# alias cat='bat --paging never --decorations never --plain'
 
 # 誤爆防止（rm を封印）
 alias rm='echo "This is not the command you are looking for."; false'
@@ -44,8 +43,6 @@ alias pdfmin='f(){ input="$1"; output="${input%.*}_min.pdf"; gs -sDEVICE=pdfwrit
 # 祝日付き 3ヶ月カレンダー
 alias cal3="cal -3; curl -s https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv | iconv -f SHIFT-JIS -t UTF-8 | grep -E \"\$(date -v-1m '+%Y/%-m/')|\$(date '+%Y/%-m/')|\$(date -v+1m '+%Y/%-m/')\""
 
-# MacVim を既存ウィンドウにタブ追加（--remote-tab-silent）
-# alias vim='mvim --remote-tab-silent'
 
 # パスワードジェネレータ
 alias genhex="openssl rand -hex 32"

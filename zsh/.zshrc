@@ -7,6 +7,3 @@ done
 # ローカル秘密（任意ファイル名）は存在すれば読む
 [[ -f "$ZDOTDIR/conf.d/90-secrets.zsh" ]] && source "$ZDOTDIR/conf.d/90-secrets.zsh"
 [[ -f "$ZDOTDIR/.zshrc.local"        ]] && source "$ZDOTDIR/.zshrc.local"
-if [[ -r "$HOME/memo-arai/zsh/paths.private.zsh" ]]; then
-  source "$HOME/memo-arai/zsh/paths.private.zsh"
-fi
